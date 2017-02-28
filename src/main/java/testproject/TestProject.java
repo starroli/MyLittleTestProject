@@ -6,7 +6,11 @@ public class TestProject {
 	
 	public static void main(String[] args) {
 		String alternativeName = "Max";
-		BigDecimal youShouldNotDoThis = new BigDecimal(1.5d);
+		try {
+			BigDecimal youShouldNotDoThis = new BigDecimal(1.5d);
+		} catch (Throwable throwable) {
+			System.err.println(throwable);
+		}
 		if (args.length > 0) {
 			System.out.println("Hello " + String.join(",", args) + "!");
 			System.out.println("How are you?");
